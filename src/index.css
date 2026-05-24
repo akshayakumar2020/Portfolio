@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #0f172a;
+  --accent: #3b82f6;
+  --bg-color: #f8fafc;
+}
+
+.dark {
+  --bg-color: #020617;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3D Card Tilt Effect */
+.tilt-card {
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Chatbot Styles */
+.chat-window {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  animation: slideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Message Bubbles */
+.message-user {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.message-bot {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* Project Card Hover Glow */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card:hover {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4), 0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+/* Skills Cards */
+.skill-card {
+  transition: transform 0.3s cubic-bezier(0.23, 1.0, 0.32, 1), box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+}
+
+/* Navbar */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Form Inputs */
+.form-input {
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Floating Button */
+.floating-chat {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+.floating-chat:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+/* Dark Mode Enhancements */
+.dark .message-bot {
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .mobile-menu {
+    animation: slideDown 0.3s ease forwards;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Concentric Circles Background */
+.bg-concentric-circles {
+  background-image: repeating-radial-gradient(
+    circle at 50% 30%,
+    transparent 0,
+    transparent 80px,
+    rgba(59, 130, 246, 0.15) 80px,
+    rgba(59, 130, 246, 0.15) 81px
+  );
+  background-size: 100% 100%;
+  animation: pulseCircles 8s ease-in-out infinite alternate;
+}
+
+.dark .bg-concentric-circles {
+  background-image: repeating-radial-gradient(
+    circle at 50% 30%,
+    transparent 0,
+    transparent 80px,
+    rgba(255, 255, 255, 0.05) 80px,
+    rgba(255, 255, 255, 0.05) 81px
+  );
+}
+
+@keyframes pulseCircles {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Floating Elements Background */
+.floating-bg-text {
+  position: absolute;
+  font-family: monospace;
+  color: rgba(59, 130, 246, 0.2);
+  font-weight: 600;
+  user-select: none;
+  animation: floatText 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.dark .floating-bg-text {
+  color: rgba(255, 255, 255, 0.07);
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.float-delay-1 { animation-delay: -2s; }
+.float-delay-2 { animation-delay: -5s; }
+.float-delay-3 { animation-delay: -7s; }
+
+.bg-gradient-radial-fade {
+  background: radial-gradient(ellipse at 50% 30%, transparent 20%, var(--bg-color) 80%);
+}

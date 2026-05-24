@@ -1,0 +1,91 @@
+import React from 'react';
+import { Calendar, Award } from 'lucide-react';
+import { experiences, education, achievements } from '../data/portfolioData';
+
+const ExperienceSection = () => {
+  return (
+    <section id="experience" className="bg-white dark:bg-slate-900 py-20 border-t border-b border-slate-200 dark:border-slate-800">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="mb-14 text-center">
+          <div className="text-xs uppercase tracking-[4px] text-blue-600 dark:text-blue-400">MY JOURNEY</div>
+          <h2 className="text-5xl font-semibold tracking-tighter mt-3">Experience & Education</h2>
+        </div>
+
+        <div className="space-y-16">
+          {/* Education Section */}
+          <div>
+            <h3 className="text-3xl font-semibold mb-8 flex items-center gap-3">
+              <Calendar className="text-blue-600" size={28} /> Education
+            </h3>
+            <div className="space-y-5">
+              {education.map((exp, idx) => (
+                <div key={idx} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">
+                  <div className="md:w-2/5 flex-shrink-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-medium text-sm tracking-wider text-blue-600">{exp.type.toUpperCase()}</div>
+                    </div>
+                    <div className="text-2xl font-semibold tracking-tight leading-none">{exp.title}</div>
+                    <div className="text-slate-500 mt-1.5">{exp.organization}</div>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="text-sm text-slate-400 mb-3 font-medium">{exp.period}</div>
+                    <p className="text-slate-600 dark:text-slate-300 text-[15px] mb-6 leading-relaxed">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.highlights.map((h, i) => <div key={i} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Experience Section */}
+          <div>
+            <h3 className="text-3xl font-semibold mb-8 flex items-center gap-3">
+              <Award className="text-blue-600" size={28} /> Experience & Certifications
+            </h3>
+            <div className="space-y-5">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">
+                  <div className="md:w-2/5 flex-shrink-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="font-medium text-sm tracking-wider text-blue-600">{exp.type.toUpperCase()}</div>
+                    </div>
+                    <div className="text-2xl font-semibold tracking-tight leading-none">{exp.title}</div>
+                    <div className="text-slate-500 mt-1.5">{exp.organization}</div>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="text-sm text-slate-400 mb-3 font-medium">{exp.period}</div>
+                    <p className="text-slate-600 dark:text-slate-300 text-[15px] mb-6 leading-relaxed">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.highlights.map((h, i) => <div key={i} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Achievements */}
+        <div className="mt-14 pt-14 border-t border-slate-200 dark:border-slate-800">
+          <div className="text-center mb-9">
+            <div className="text-sm text-blue-600 dark:text-blue-400 font-medium">KEY HIGHLIGHTS</div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {achievements.map((ach, idx) => (
+              <div key={idx} className="bg-gradient-to-b from-slate-900 to-black rounded-3xl p-9 text-center text-white">
+                <div className="font-mono text-6xl font-bold tracking-tighter text-blue-400">{ach.number}</div>
+                <div className="text-sm tracking-wider text-white/70 mt-3 font-medium">{ach.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceSection;
