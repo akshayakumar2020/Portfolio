@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -12,10 +12,10 @@ const navLinks = [
 
 const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSection }) => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#080b12]/90 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-800">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-600 to-emerald-600 flex items-center justify-center shadow-lg shadow-cyan-950/20">
             <span className="text-white font-bold text-xl tracking-tighter">AK</span>
           </div>
           <div>
@@ -30,7 +30,7 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
             <button 
               key={link.id}
               onClick={() => scrollToSection(link.id)} 
-              className="nav-link text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors"
             >
               {link.label}
             </button>
@@ -41,10 +41,16 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
           {/* Theme Toggle */}
           <button 
             onClick={toggleTheme} 
-            className="theme-toggle p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
-            aria-label="Toggle theme"
+            className="theme-toggle flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-100 px-3.5 py-2 text-xs font-semibold text-zinc-700 hover:border-cyan-300 hover:text-cyan-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-cyan-700 dark:hover:text-cyan-300 transition-all cursor-pointer shadow-sm"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            {isDark ? (
+              <Sun size={14} className="text-amber-500" />
+            ) : (
+              <Moon size={14} className="text-cyan-700" />
+            )}
+            <span>{isDark ? "Dark" : "Light"}</span>
           </button>
 
           {/* Mobile Menu Button */}
@@ -64,14 +70,14 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
             initial={{ opacity: 0, height: 0 }} 
             animate={{ opacity: 1, height: 'auto' }} 
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 py-6 mobile-menu"
+            className="md:hidden bg-white dark:bg-[#080b12] border-t border-zinc-200 dark:border-zinc-800 px-6 py-6 mobile-menu"
           >
             <div className="flex flex-col gap-4 text-sm">
               {navLinks.map(link => (
                 <button 
                   key={link.id}
                   onClick={() => scrollToSection(link.id)} 
-                  className="text-left py-1 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
+                  className="text-left py-1 text-zinc-600 dark:text-zinc-300 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium"
                 >
                   {link.label}
                 </button>

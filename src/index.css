@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0f172a;
-  --accent: #3b82f6;
-  --bg-color: #f8fafc;
+  --primary: #111827;
+  --accent: #0891b2;
+  --bg-color: #f7f8fb;
+  color-scheme: light;
 }
 
 .dark {
-  --bg-color: #020617;
+  --bg-color: #080b12;
+  color-scheme: dark;
 }
 
 body {
@@ -37,6 +39,7 @@ html {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -45,7 +48,7 @@ html {
 
 /* Message Bubbles */
 .message-user {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: linear-gradient(135deg, #0891b2, #0f766e);
   color: white;
 }
 
@@ -60,7 +63,7 @@ html {
 }
 
 .project-card:hover {
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4), 0 0 0 1px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.28), 0 0 0 1px rgba(8, 145, 178, 0.22);
 }
 
 /* Skills Cards */
@@ -85,7 +88,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  background: linear-gradient(to right, #0891b2, #10b981);
   transition: width 0.3s ease;
 }
 
@@ -104,8 +107,8 @@ html {
 }
 
 .form-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: #0891b2;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.12);
   outline: none;
 }
 
@@ -134,43 +137,53 @@ html {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Concentric Circles Background */
 .bg-concentric-circles {
-  background-image: repeating-radial-gradient(
-    circle at 50% 30%,
-    transparent 0,
-    transparent 80px,
-    rgba(59, 130, 246, 0.15) 80px,
-    rgba(59, 130, 246, 0.15) 81px
-  );
+  background-image: repeating-radial-gradient(circle at 50% 30%,
+      transparent 0,
+      transparent 80px,
+      rgba(8, 145, 178, 0.12) 80px,
+      rgba(8, 145, 178, 0.12) 81px);
   background-size: 100% 100%;
   animation: pulseCircles 8s ease-in-out infinite alternate;
 }
 
 .dark .bg-concentric-circles {
-  background-image: repeating-radial-gradient(
-    circle at 50% 30%,
-    transparent 0,
-    transparent 80px,
-    rgba(255, 255, 255, 0.05) 80px,
-    rgba(255, 255, 255, 0.05) 81px
-  );
+  background-image: repeating-radial-gradient(circle at 50% 30%,
+      transparent 0,
+      transparent 80px,
+      rgba(255, 255, 255, 0.05) 80px,
+      rgba(255, 255, 255, 0.05) 81px);
 }
 
 @keyframes pulseCircles {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.05); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 }
 
 /* Floating Elements Background */
 .floating-bg-text {
   position: absolute;
   font-family: monospace;
-  color: rgba(59, 130, 246, 0.2);
+  color: rgba(8, 145, 178, 0.18);
   font-weight: 600;
   user-select: none;
   animation: floatText 8s ease-in-out infinite alternate;
@@ -182,13 +195,26 @@ html {
 }
 
 @keyframes floatText {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-15px) rotate(2deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-15px) rotate(2deg);
+  }
 }
 
-.float-delay-1 { animation-delay: -2s; }
-.float-delay-2 { animation-delay: -5s; }
-.float-delay-3 { animation-delay: -7s; }
+.float-delay-1 {
+  animation-delay: -2s;
+}
+
+.float-delay-2 {
+  animation-delay: -5s;
+}
+
+.float-delay-3 {
+  animation-delay: -7s;
+}
 
 .bg-gradient-radial-fade {
   background: radial-gradient(ellipse at 50% 30%, transparent 20%, var(--bg-color) 80%);

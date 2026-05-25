@@ -1,73 +1,105 @@
 export const projects = [
   {
     id: 1,
-    name: "E-Commerce REST API",
-    description: "A robust, scalable backend API for a full-featured e-commerce platform with user authentication, product management, and order processing.",
-    technologies: ["Java", "Spring Boot", "MySQL", "JWT", "Spring Security"],
-    features: [
-      "JWT-based secure authentication & authorization",
-      "RESTful CRUD operations for products & orders",
-      "Integrated payment gateway simulation",
-      "Role-based access control (Admin/User)"
+    name: "MediChain",
+
+    description:
+      "An AI-powered healthcare platform designed for secure storage, analysis, and management of patient health reports with intelligent medical insight generation.",
+
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Spring AI",
+      "React.js",
+      "MySQL"
     ],
-    github: "https://github.com/akshayakumar/ecommerce-backend",
-    live: "https://ecommerce-api-demo.vercel.app",
+
+    features: [
+      "Secure patient health report management system",
+      "Scalable RESTful APIs using Spring Boot",
+      "AI-powered medical report analysis & insight generation",
+      "Pattern detection for smarter healthcare decision support",
+      "Integrated React frontend with backend APIs",
+      "Cloud-ready architecture for future scalability"
+    ],
+
+    github: "https://github.com/akshayakumar2020/health-report-analyzer",
+    live: "https://health-report-analyzer.netlify.app",
+
     image: "/images/project1.jpg",
-    category: "Backend"
+    category: "AI + Full Stack"
   },
   {
     id: 2,
-    name: "TaskFlow API",
-    description: "Comprehensive task and project management backend system with real-time updates, team collaboration, and advanced reporting capabilities.",
-    technologies: ["Java", "Spring Boot", "PostgreSQL", "Docker", "Maven"],
-    features: [
-      "Kanban-style task boards with drag & drop",
-      "Real-time notifications via WebSocket",
-      "Team management & role assignments",
-      "Advanced filtering, search & analytics"
+    name: "ParkEase – Smart Parking System",
+    description:
+      "A full-stack smart parking management system enabling real-time slot booking, secure authentication, role-based access control, and efficient parking administration for users, owners, and admins.",
+
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "React.js",
+      "MySQL",
+      "JWT",
+      "Maven"
     ],
-    github: "https://github.com/akshayakumar/taskflow-api",
-    live: "https://taskflow-api-demo.netlify.app",
+
+    features: [
+      "Real-time parking slot booking & management",
+      "JWT authentication with role-based access control",
+      "Admin, Owner & User management modules",
+      "RESTful APIs with secure request-response handling",
+      "User activity tracking & booking analytics",
+      "Integrated React frontend with Spring Boot backend"
+    ],
+
+    github: "https://github.com/akshayakumar2020/parkease",
+    live: "https://parkease-demo.netlify.app",
+
     image: "/images/project2.jpg",
-    category: "Backend"
+    category: "Full Stack"
   },
   {
     id: 3,
-    name: "BlogSphere Backend",
-    description: "Full-featured content management and blogging platform backend featuring rich text support, user comments, and advanced SEO optimizations.",
-    technologies: ["Java", "Spring Boot", "PostgreSQL", "Redis", "JWT"],
+    name: "Sorting Visualizer",
+    description: "An interactive web application that visualizes sorting algorithms with step-by-step execution, dynamic animations, and real-time performance comparison.",
+    technologies: ["JavaScript", "HTML", "CSS", "Web Audio API", "Algorithms", "Data Visualization"],
     features: [
-      "Rich markdown editor & content versioning",
-      "Comment system with moderation",
-      "Redis caching for high performance",
-      "Search indexing & SEO friendly APIs"
+      "Implemented Bubble Sort, Selection Sort, and Insertion Sort",
+      "Added dynamic animations to improve algorithm understanding",
+      "Visualized time complexity and performance differences in real time",
+      "Used the Web Audio API to add sound feedback during sorting steps",
+      "Built controls for speed adjustment, input size, and algorithm selection"
     ],
-    github: "https://github.com/akshayakumar/blogsphere",
-    live: "https://blogsphere-demo.app",
+    github: "https://github.com/akshayakumar2020/Sorting-Visualizer",
+    live: "https://sorting-visualizer-akshaya.vercel.app/",
     image: "/images/project3.jpg",
-    category: "Backend"
+    category: "Frontend"
   }
 ];
 
+
 export const skills = {
   backend: [
-    { name: "Java", level: "Expert", icon: "☕" },
-    { name: "Spring Boot", level: "Advanced", icon: "🌱" },
-    { name: "Spring AI", level: "Advanced", icon: "/images/spring-ai-logo.svg" },
-    { name: "REST APIs", level: "Expert", icon: "🔗" },
-    { name: "Microservices", level: "Intermediate", icon: "⚙️" }
+    { name: "Java", icon: "☕" },
+    { name: "Spring Boot", icon: "🌱" },
+    { name: "Spring AI", icon: "🍃" },
+    { name: "REST APIs", icon: "🔗" }
   ],
+
   database: [
-    { name: "MySQL", level: "Advanced", icon: "🐬" },
-    { name: "PostgreSQL", level: "Advanced", icon: "🐘" },
-    { name: "Redis", level: "Intermediate", icon: "⚡" },
-    { name: "MongoDB", level: "Intermediate", icon: "🍃" }
+    { name: "MySQL", icon: "🐬" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "Hibernate", icon: "🗄️" },
+    { name: "JPA", icon: "📚" }
   ],
+
   tools: [
-    { name: "Git & GitHub", level: "Expert", icon: "📦" },
-    { name: "Docker", level: "Advanced", icon: "🐳" },
-    { name: "Maven", level: "Expert", icon: "📦" },
-    { name: "Postman", level: "Expert", icon: "📮" }
+    { name: "Git & GitHub", icon: "🐙" },
+    { name: "Maven", icon: "📦" },
+    { name: "Postman", icon: "📮" },
+    { name: "JWT Auth", icon: "🔐" },
+    // { name: "IntelliJ IDEA", icon: "💡" }
   ]
 };
 
@@ -75,53 +107,128 @@ export const education = [
   {
     type: "education",
     title: "B.Tech in Computer Science",
-    organization: "Uttar Pradesh Technical University",
-    period: "2020 - 2024",
-    description: "Graduated with 8.7 CGPA. Focused on Data Structures, Algorithms, Database Systems and Software Engineering.",
-    highlights: ["Data Structures & Algorithms", "System Design", "Database Management"]
+    organization: "Dr. A. P. J. Abdul Kalam Technical University, Lucknow",
+    period: "2023 - 2027",
+    description:
+      "Focused on Data Structures, Algorithms, Database Systems and Software Engineering. CGPA: 7.6",
+    highlights: [
+      "Data Structures & Algorithms",
+      "System Design",
+      "Database Management"
+    ]
   },
+
   {
     type: "education",
     title: "Class 12 (Intermediate)",
-    organization: "State Board",
-    period: "2018 - 2020",
-    description: "Completed higher secondary education with a strong focus on Mathematics and Science.",
-    highlights: ["Mathematics", "Physics", "Chemistry"]
+    organization: "CBSE Board",
+    period: "2021 - 2022",
+    description:
+      "Completed higher secondary education with a strong focus on Mathematics and Science. Percentage: 81.2%",
+    highlights: [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "English",
+      "Physical Education"
+    ]
   },
+
   {
     type: "education",
     title: "Class 10 (High School)",
-    organization: "State Board",
-    period: "2016 - 2018",
-    description: "Completed secondary education with an excellent academic foundation.",
-    highlights: ["Science", "Mathematics", "English"]
+    organization: "CBSE Board",
+    period: "2019 - 2020",
+    description:
+      "Completed secondary education with an excellent academic foundation. Percentage: 77.6%",
+    highlights: [
+      "Science",
+      "Mathematics",
+      "English",
+      "Social Studies",
+      "Hindi"
+    ]
   }
 ];
 
 export const experiences = [
   {
     type: "certification",
-    title: "Oracle Certified Java Programmer",
-    organization: "Oracle University",
-    period: "2023",
-    description: "Comprehensive certification validating core Java and advanced OOP principles.",
-    highlights: ["Java SE 11", "Advanced Java Concepts"]
+    title: "Problem Solving (Basic)",
+    organization: "HackerRank",
+    period: "2024",
+    description:
+      "Successfully passed the HackerRank Problem Solving (Basic) skill certification test, demonstrating foundational problem-solving and coding abilities.",
+    highlights: [
+      "Data Structures",
+      "Algorithms",
+      "Basic Problem Solving",
+      "Coding Assessment"
+    ],
+    credentialId: "2D2BB46E67B9",
+    issuedDate: "December 2024"
   },
   {
     type: "certification",
-    title: "Spring Professional Certification",
-    organization: "VMware",
+    title: "Programming in Java",
+    organization: "NPTEL | IIT Kharagpur",
+    period: "Jan - Apr 2026",
+    image: "/certificates/nptel-java.png", // certificate image path
+    description:
+      "Successfully completed the NPTEL Programming in Java course with Elite certification, demonstrating strong understanding of Java programming concepts and problem-solving skills.",
+    highlights: [
+      "Score: 93%",
+      "Java Programming",
+      "Object-Oriented Programming",
+      "Problem Solving",
+      "Elite Certification"
+
+    ],
+    credentialId: "NPTEL26CS36S857800216",
+    issuedDate: "April 2026"
+  },
+  {
+    type: "certification",
+    title: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+    organization: "Oracle University",
+    period: "2025 - 2027",
+    description:
+      "Professional certification validating expertise in Oracle Cloud Infrastructure Generative AI services, AI fundamentals, LLMs, and AI-powered application development.",
+    highlights: [
+      "OCI Generative AI",
+      "Large Language Models (LLMs)",
+      "AI Application Development",
+      "Oracle Cloud Infrastructure"
+    ],
+    credentialId: "1024700150CI25GAIOCP",
+    issuedDate: "August 2025",
+    validTill: "August 2027"
+  },
+  {
+    type: "certification",
+    title: "HTML5 - The Language",
+    organization: "Infosys Springboard",
     period: "2024",
-    description: "Advanced certification in Spring Framework ecosystem and best practices.",
-    highlights: ["Spring Boot 3", "Spring Cloud", "Microservices"]
+    image: "/certificates/infosys-html5.png", // certificate image path
+    description:
+      "Successfully completed the HTML5 - The Language course offered by Infosys Springboard, gaining foundational knowledge of modern web structure and semantic HTML development.",
+    highlights: [
+      "HTML5 Fundamentals",
+      "Semantic HTML",
+      "Web Development Basics",
+      "Frontend Development"
+    ],
+    issuedDate: "October 2024",
   }
+
 ];
 
 export const achievements = [
   { number: "300+", label: "LeetCode Problems Solved" },
   { number: "15+", label: "Backend Projects Built" },
   { number: "4", label: "Technical Certifications" },
-  { number: "2", label: "Open Source Contributions" }
+  //{ number: "2", label: "Open Source Contributions" },
+  { number: "100%", label: "Passion For Development" }
 ];
 
 export const getBotResponse = (message) => {
@@ -131,20 +238,32 @@ export const getBotResponse = (message) => {
     return "Hi! I'm Akshaya Kumar, a passionate Java Backend Developer based in Kanpur, Uttar Pradesh. I'm a fresher with strong fundamentals in building scalable backend systems.";
   }
 
+  if (lowerMsg.includes('medichain') || lowerMsg.includes('health') || lowerMsg.includes('medical')) {
+    return "MediChain is an AI-powered healthcare platform designed for secure storage, analysis, and management of patient health reports with intelligent medical insight generation. It's built with Java, Spring Boot, Spring AI, React.js, and MySQL.";
+  }
+
+  if (lowerMsg.includes('parkease') || lowerMsg.includes('parking')) {
+    return "ParkEase is a smart parking management system enabling real-time slot booking, secure JWT authentication, role-based access control, and admin/owner modules. It is built using Java, Spring Boot, React.js, MySQL, JWT, and Maven.";
+  }
+
+  if (lowerMsg.includes('sorting') || lowerMsg.includes('visualizer')) {
+    return "Sorting Visualizer is an interactive web application that visualizes sorting algorithms (Bubble Sort, Selection Sort, Insertion Sort) with step-by-step execution, dynamic animations, and sound feedback using the Web Audio API. Built with JavaScript, HTML, and CSS.";
+  }
+
   if (lowerMsg.includes('project') || lowerMsg.includes('projects')) {
-    return "I have built 3 major backend projects: 1. E-Commerce REST API, 2. TaskFlow API (Task Management), and 3. BlogSphere Backend. All use Spring Boot, REST APIs and modern databases. Would you like details about a specific project?";
+    return "I have built projects including: 1. MediChain (AI-powered healthcare), 2. ParkEase (Smart Parking System), and 3. Sorting Visualizer. They cover full-stack development, Spring Boot, Spring AI, React.js, databases, and algorithm visualization. Which one would you like details about?";
   }
 
-  if (lowerMsg.includes('skill') || lowerMsg.includes('tech') || lowerMsg.includes('technology')) {
-    return "My core skills include Java, Spring Boot, REST APIs, MySQL & PostgreSQL. I'm also experienced with Git, Docker, and Maven. I love building clean, maintainable code with strong problem-solving skills.";
+  if (lowerMsg.includes('skill') || lowerMsg.includes('tech') || lowerMsg.includes('technology') || lowerMsg.includes('technologies')) {
+    return "My core skills include Java, Spring Boot, Spring AI, REST APIs, MySQL, PostgreSQL, Hibernate, and JPA. I'm also experienced with Git & GitHub, Maven, Postman, and JWT Authentication. I love building clean, maintainable backend code with strong problem-solving skills.";
   }
 
-  if (lowerMsg.includes('resume') || lowerMsg.includes('cv') || lowerMsg.includes('experience')) {
-    return "I'm a fresher with a B.Tech in Computer Science (8.7 CGPA). I hold Oracle Java and Spring Professional certifications. I've solved 300+ LeetCode problems and built multiple backend projects. Would you like my resume link?";
+  if (lowerMsg.includes('resume') || lowerMsg.includes('cv') || lowerMsg.includes('experience') || lowerMsg.includes('education') || lowerMsg.includes('qualification')) {
+    return "I am pursuing a B.Tech in Computer Science at Dr. A.P.J. Abdul Kalam Technical University, Lucknow (2023 - 2027) with a CGPA of 7.6. I hold 4 certifications: Oracle Cloud Infrastructure 2025 Certified Generative AI Professional, NPTEL Programming in Java (Elite, 93%), HackerRank Problem Solving (Basic), and HTML5 (Infosys Springboard). I've solved 300+ LeetCode problems and built 15+ backend projects. Would you like my resume link?";
   }
 
   if (lowerMsg.includes('contact') || lowerMsg.includes('email') || lowerMsg.includes('reach')) {
-    return "You can reach me at akshaya.kumar@email.com. I'm also active on LinkedIn and GitHub. Feel free to use the contact form below or connect with me directly!";
+    return "You can reach me at akshayakumarbth106@gmail.com. I'm also active on LinkedIn and GitHub. Feel free to use the contact form below or connect with me directly!";
   }
 
   if (lowerMsg.includes('location') || lowerMsg.includes('kanpur')) {
@@ -156,8 +275,8 @@ export const getBotResponse = (message) => {
   }
 
   if (lowerMsg.includes('github') || lowerMsg.includes('linkedin')) {
-    return "My GitHub: github.com/akshayakumar2020 and LinkedIn: linkedin.com/in/akshayakumar2020. Feel free to connect with me there!";
+    return "My GitHub is https://github.com/akshayakumar2020 and LinkedIn is https://linkedin.com/in/akshayakumar2020. Feel free to connect with me there!";
   }
 
-  return "Thanks for your question! I specialize in Java backend development. You can ask me about my projects, skills, experience, or how to get in touch. What would you like to know?";
+  return "Thanks for your question! I specialize in Java backend development. You can ask me about my projects, skills, experience, or how to get in touch. What would you like to know? Connect me on LinkedIn for more details!";
 };

@@ -6,7 +6,7 @@ const About = () => {
     <section id="about" className="max-w-5xl mx-auto px-6 py-20">
       <div className="grid md:grid-cols-12 gap-x-12 items-center">
         <div className="md:col-span-7">
-          <div className="uppercase tracking-[3px] text-xs font-medium text-blue-600 dark:text-blue-400 mb-4">INTRODUCTION</div>
+          <div className="uppercase tracking-[3px] text-xs font-medium text-cyan-700 dark:text-cyan-300 mb-4">INTRODUCTION</div>
           <h2 className="text-5xl font-semibold tracking-tighter mb-8">About Me</h2>
           
           <div className="prose prose-lg text-slate-600 dark:text-slate-300 max-w-[46ch]">
@@ -16,9 +16,9 @@ const About = () => {
         </div>
         
         <div className="md:col-span-5 mt-10 md:mt-0">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-9 border border-slate-200 dark:border-slate-800 shadow-xl">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl p-9 border border-zinc-200 dark:border-zinc-800 shadow-xl">
             <div className="flex items-center gap-4 mb-6">
-              <User className="text-blue-600" size={26} />
+              <User className="text-cyan-700 dark:text-cyan-300" size={26} />
               <div className="font-semibold text-xl">My Mission</div>
             </div>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">To craft elegant backend solutions that power seamless user experiences while mastering the fundamentals of scalable systems design.</p>
