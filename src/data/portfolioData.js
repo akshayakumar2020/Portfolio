@@ -173,7 +173,7 @@ export const experiences = [
     title: "Programming in Java",
     organization: "NPTEL | IIT Kharagpur",
     period: "Jan - Apr 2026",
-    image: "/certificates/nptel-java.png", // certificate image path
+    image: "/images/project1.jpg", // certificate image path
     description:
       "Successfully completed the NPTEL Programming in Java course with Elite certification, demonstrating strong understanding of Java programming concepts and problem-solving skills.",
     highlights: [

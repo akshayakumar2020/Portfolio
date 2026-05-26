@@ -21,7 +21,7 @@ const About = () => {
               <User className="text-cyan-700 dark:text-cyan-300" size={26} />
               <div className="font-semibold text-xl">My Mission</div>
             </div>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">To craft elegant backend solutions that power seamless user experiences while mastering the fundamentals of scalable systems design.</p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">To build high-performance backend systems that deliver seamless digital experiences while continuously growing as a software engineer and contributing to impactful products.</p>
 
             <div className="mt-7 pt-7 border-t flex flex-wrap gap-x-8 gap-y-4 text-sm">
               <div><span className="font-medium">Interests:</span> System Design, Microservices, Open Source</div>
