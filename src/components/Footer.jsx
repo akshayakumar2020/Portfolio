@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-zinc-200 dark:border-zinc-800 py-9 bg-white dark:bg-[#080b12]">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-y-4 text-base text-zinc-500">
-        <div>(c) {new Date().getFullYear()} Akshaya Kumar. Built with React & Tailwind.</div>
+        <div>(c) {new Date().getFullYear()} Copyright © 2026 Akshaya Kumar. All rights reserved. Built with React & Tailwind.</div>
         <div className="flex items-center gap-3">
           <a href="https://github.com/akshayakumar2020" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" className="p-2 rounded-full hover:bg-cyan-50 hover:text-cyan-700 dark:hover:bg-cyan-950/35 dark:hover:text-cyan-300 transition-colors">
             <GithubIcon />
