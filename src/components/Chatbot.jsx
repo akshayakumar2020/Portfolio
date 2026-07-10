@@ -8,7 +8,9 @@ const Chatbot = ({ isChatOpen, setIsChatOpen, chatMessages, chatInput, setChatIn
       {/* Floating Button */}
       <div className="fixed bottom-8 right-8 z-[60]">
         <button 
+          type="button"
           onClick={() => setIsChatOpen(!isChatOpen)}
+          aria-label={isChatOpen ? "Close chat assistant" : "Open chat assistant"}
           className="floating-chat w-16 h-16 bg-gradient-to-tr from-cyan-700 via-teal-600 to-emerald-500 flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(8,145,178,0.35)] text-white hover:scale-110 transition-transform duration-300"
         >
           <Bot size={29} />
@@ -31,13 +33,13 @@ const Chatbot = ({ isChatOpen, setIsChatOpen, chatMessages, chatInput, setChatIn
                     <div className="text-xs text-white/60">Ask me anything!</div>
                   </div>
                 </div>
-                <button onClick={() => setIsChatOpen(false)} className="p-2 hover:bg-white/10 rounded-full"><X size={18} /></button>
+                <button type="button" onClick={() => setIsChatOpen(false)} aria-label="Close chat assistant" className="p-2 hover:bg-white/10 rounded-full"><X size={18} /></button>
               </div>
 
               {/* Messages Area */}
               <div className="flex-1 overflow-y-auto px-5 py-6 space-y-4 bg-zinc-50 dark:bg-[#080b12] text-sm">
                 {chatMessages.map((msg, idx) => (
-                  <div key={idx} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  <div key={`${msg.type}-${idx}-${msg.text.slice(0, 20)}`} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[85%] px-5 py-3.5 rounded-3xl text-[14.5px] leading-snug ${msg.type === 'user' ? 'message-user rounded-br-none' : 'message-bot rounded-bl-none'}`}>
                       {msg.text}
                     </div>
@@ -59,9 +61,10 @@ const Chatbot = ({ isChatOpen, setIsChatOpen, chatMessages, chatInput, setChatIn
               <div className="px-5 pt-3 pb-1 bg-zinc-100 dark:bg-zinc-900">
                 <div className="text-[10px] uppercase tracking-widest mb-2 px-1 text-slate-400">Quick Questions</div>
                 <div className="flex flex-wrap gap-2">
-                  {["Tell me about Akshaya", "Show projects", "Skills", "Resume", "Contact"].map((q, i) => (
+                  {["Tell me about Akshaya", "Show projects", "Skills", "Resume", "Contact"].map(q => (
                     <button 
-                      key={i} 
+                      type="button"
+                      key={q} 
                       onClick={() => handleChatQuickPrompt(q)} 
                       className="px-4 py-1.5 text-xs bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 hover:bg-cyan-50 dark:hover:bg-cyan-950/35 rounded-2xl transition-colors"
                     >
@@ -78,9 +81,10 @@ const Chatbot = ({ isChatOpen, setIsChatOpen, chatMessages, chatInput, setChatIn
                   value={chatInput} 
                   onChange={(e) => setChatInput(e.target.value)}
                   placeholder="Ask me anything about Akshaya..."
+                  aria-label="Chat message"
                   className="flex-1 px-5 py-3 text-sm bg-transparent focus:outline-none placeholder:text-slate-400"
                 />
-                <button type="submit" disabled={!chatInput.trim()} className="px-4 text-cyan-700 dark:text-cyan-300 disabled:text-slate-400 transition-colors">
+                <button type="submit" disabled={!chatInput.trim()} aria-label="Send chat message" className="px-4 text-cyan-700 dark:text-cyan-300 disabled:text-slate-400 transition-colors">
                   <Send size={18} />
                 </button>
               </form>

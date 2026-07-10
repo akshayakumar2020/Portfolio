@@ -35,7 +35,7 @@ const ContactSection = ({ formData, formErrors, isSubmitting, submitSuccess, han
                   <Award className="text-emerald-600" size={32} />
                 </div>
                 <div className="font-semibold text-3xl">Thank you!</div>
-                <p className="text-slate-500 mt-3 text-lg">Your message has been received. I'll get back to you soon.</p>
+                <p className="text-slate-500 mt-3 text-lg">Your email app should open with the message ready to send.</p>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -46,6 +46,8 @@ const ContactSection = ({ formData, formErrors, isSubmitting, submitSuccess, han
                     value={formData.name} 
                     onChange={handleFormChange}
                     placeholder="Your Name" 
+                    aria-label="Your name"
+                    aria-invalid={Boolean(formErrors.name)}
                     className="form-input w-full px-7 py-4 bg-zinc-50 dark:bg-[#080b12] border border-zinc-200 dark:border-zinc-700 rounded-2xl text-lg placeholder:text-slate-400" 
                   />
                   {formErrors.name && <p className="text-red-500 text-sm mt-1.5 ml-1">{formErrors.name}</p>}
@@ -57,6 +59,8 @@ const ContactSection = ({ formData, formErrors, isSubmitting, submitSuccess, han
                     value={formData.email} 
                     onChange={handleFormChange}
                     placeholder="Your Email" 
+                    aria-label="Your email"
+                    aria-invalid={Boolean(formErrors.email)}
                     className="form-input w-full px-7 py-4 bg-zinc-50 dark:bg-[#080b12] border border-zinc-200 dark:border-zinc-700 rounded-2xl text-lg placeholder:text-slate-400" 
                   />
                   {formErrors.email && <p className="text-red-500 text-sm mt-1.5 ml-1">{formErrors.email}</p>}
@@ -68,6 +72,8 @@ const ContactSection = ({ formData, formErrors, isSubmitting, submitSuccess, han
                     onChange={handleFormChange}
                     rows={6} 
                     placeholder="Tell me about your project or opportunity..." 
+                    aria-label="Message"
+                    aria-invalid={Boolean(formErrors.message)}
                     className="form-input w-full px-7 py-5 bg-zinc-50 dark:bg-[#080b12] border border-zinc-200 dark:border-zinc-700 rounded-3xl text-lg placeholder:text-slate-400 resize-y" 
                   />
                   {formErrors.message && <p className="text-red-500 text-sm mt-1.5 ml-1">{formErrors.message}</p>}

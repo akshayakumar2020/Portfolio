@@ -14,7 +14,12 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#080b12]/90 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-800">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <button
+          type="button"
+          className="flex items-center gap-3 cursor-pointer text-left"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
+        >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-600 to-emerald-600 flex items-center justify-center shadow-lg shadow-cyan-950/20">
             <span className="text-white font-bold text-xl tracking-tighter">AK</span>
           </div>
@@ -22,7 +27,7 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
             <div className="font-semibold text-xl tracking-tight">Akshaya Kumar</div>
             <div className="text-[10px] text-slate-500 dark:text-slate-400 -mt-1">JAVA BACKEND DEVELOPER</div>
           </div>
-        </div>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-sm font-medium">
@@ -40,6 +45,7 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
         <div className="flex items-center gap-3">
           {/* Theme Toggle */}
           <button 
+            type="button"
             onClick={toggleTheme} 
             className="theme-toggle flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-100 px-3.5 py-2 text-xs font-semibold text-zinc-700 hover:border-cyan-300 hover:text-cyan-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-cyan-700 dark:hover:text-cyan-300 transition-all cursor-pointer shadow-sm"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
@@ -55,7 +61,10 @@ const Navbar = ({ isDark, toggleTheme, isMenuOpen, setIsMenuOpen, scrollToSectio
 
           {/* Mobile Menu Button */}
           <button 
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
             className="md:hidden p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}

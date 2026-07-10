@@ -19,7 +19,7 @@ const ProjectModal = ({ selectedProject, closeProject }) => {
               <img src={selectedProject.image} alt={selectedProject.name} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/80"></div>
               
-              <button onClick={closeProject} className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-black/60 hover:bg-black/90 px-4 py-2 rounded-full text-sm flex items-center gap-2">
+              <button type="button" onClick={closeProject} className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-black/60 hover:bg-black/90 px-4 py-2 rounded-full text-sm flex items-center gap-2">
                 <X size={16} /> Close
               </button>
               
@@ -34,8 +34,8 @@ const ProjectModal = ({ selectedProject, closeProject }) => {
               <div className="mt-7 md:mt-10">
                 <div className="text-sm font-semibold tracking-widest text-cyan-700 dark:text-cyan-300 mb-4">TECHNOLOGIES USED</div>
                 <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, i) => (
-                    <div key={i} className="px-4 sm:px-5 py-1 rounded-full border border-zinc-200 dark:border-zinc-700 text-sm">{tech}</div>
+                  {selectedProject.technologies.map(tech => (
+                    <div key={tech} className="px-4 sm:px-5 py-1 rounded-full border border-zinc-200 dark:border-zinc-700 text-sm">{tech}</div>
                   ))}
                 </div>
               </div>
@@ -43,8 +43,8 @@ const ProjectModal = ({ selectedProject, closeProject }) => {
               <div className="mt-7 md:mt-9">
                 <div className="text-sm font-semibold tracking-widest text-cyan-700 dark:text-cyan-300 mb-4">KEY FEATURES</div>
                 <ul className="space-y-3 text-[15px]">
-                  {selectedProject.features.map((feature, i) => (
-                    <li key={i} className="flex gap-3 text-slate-600 dark:text-slate-300"><span className="text-cyan-600 dark:text-cyan-300 mt-1">-&gt;</span> {feature}</li>
+                  {selectedProject.features.map(feature => (
+                    <li key={feature} className="flex gap-3 text-slate-600 dark:text-slate-300"><span className="text-cyan-600 dark:text-cyan-300 mt-1">-&gt;</span> {feature}</li>
                   ))}
                 </ul>
               </div>

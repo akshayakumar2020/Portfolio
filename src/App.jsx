@@ -11,6 +11,8 @@ import Chatbot from './components/Chatbot';
 import ProjectModal from './components/ProjectModal';
 import { getBotResponse } from './data/portfolioData';
 
+const CONTACT_EMAIL = 'akshayakumarbth106@gmail.com';
+
 const App = () => {
   // Theme
   const [isDark, setIsDark] = useState(() => {
@@ -52,7 +54,7 @@ const App = () => {
     }
   }, [isDark]);
 
-  const toggleTheme = () => setIsDark(!isDark);
+  const toggleTheme = () => setIsDark(prev => !prev);
 
   // Smooth Scroll
   const scrollToSection = (id) => {
@@ -122,8 +124,12 @@ const App = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = 'Please enter a valid email';
     }
-    if (!formData.message.trim()) errors.message = 'Message is required';
-    if (formData.message.trim().length < 15) errors.message = 'Message should be at least 15 characters';
+    const trimmedMessage = formData.message.trim();
+    if (!trimmedMessage) {
+      errors.message = 'Message is required';
+    } else if (trimmedMessage.length < 15) {
+      errors.message = 'Message should be at least 15 characters';
+    }
     
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -144,8 +150,22 @@ const App = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1200));
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        '',
+        'Message:',
+        message
+      ].join('\n')
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     setIsSubmitting(false);
     setSubmitSuccess(true);

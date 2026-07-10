@@ -11,7 +11,7 @@ export const projects = [
       "Spring Boot",
       "Spring AI",
       "React.js",
-      "MySQL"
+      "PostgreSQL"
     ],
 
     features: [
@@ -23,8 +23,8 @@ export const projects = [
       "Cloud-ready architecture for future scalability"
     ],
 
-    github: "https://github.com/akshayakumar2020/health-report-analyzer",
-    live: "https://health-report-analyzer.netlify.app",
+    github: "https://github.com/akshayakumar2020/MediScanAi",
+    live: "https://healthcarereport.vercel.app/",
 
     image: "/images/project1.jpg",
     category: "AI + Full Stack"
@@ -53,7 +53,7 @@ export const projects = [
       "Integrated React frontend with Spring Boot backend"
     ],
 
-    github: "https://github.com/akshayakumar2020/parkease",
+    github: "https://github.com/akshayakumar2020/ParkEase-Smart-Parking-System",
     live: "https://parkease-demo.netlify.app",
 
     image: "/images/project2.jpg",
@@ -173,7 +173,6 @@ export const experiences = [
     title: "Programming in Java",
     organization: "NPTEL | IIT Kharagpur",
     period: "Jan - Apr 2026",
-    image: "/images/project1.jpg", // certificate image path
     description:
       "Successfully completed the NPTEL Programming in Java course with Elite certification, demonstrating strong understanding of Java programming concepts and problem-solving skills.",
     highlights: [

@@ -30,8 +30,8 @@ const SkillsSection = () => {
               </div>
             </div>
             <div className="space-y-5">
-              {skills.backend.map((skill, idx) => (
-                <div key={idx} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-cyan-50 dark:hover:bg-cyan-950/35 border border-zinc-100 dark:border-transparent">
+              {skills.backend.map(skill => (
+                <div key={skill.name} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-cyan-50 dark:hover:bg-cyan-950/35 border border-zinc-100 dark:border-transparent">
                   <div className="flex items-center gap-4 text-xl">
                     {renderSkillIcon(skill)}
                     <span className="font-medium">{skill.name}</span>
@@ -51,8 +51,8 @@ const SkillsSection = () => {
               </div>
             </div>
             <div className="space-y-5">
-              {skills.database.map((skill, idx) => (
-                <div key={idx} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-950/35 border border-zinc-100 dark:border-transparent">
+              {skills.database.map(skill => (
+                <div key={skill.name} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-emerald-50 dark:hover:bg-emerald-950/35 border border-zinc-100 dark:border-transparent">
                   <div className="flex items-center gap-4 text-xl">
                     {renderSkillIcon(skill)}
                     <span className="font-medium">{skill.name}</span>
@@ -72,8 +72,8 @@ const SkillsSection = () => {
               </div>
             </div>
             <div className="space-y-5">
-              {skills.tools.map((skill, idx) => (
-                <div key={idx} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-amber-50 dark:hover:bg-amber-950/35 border border-zinc-100 dark:border-transparent">
+              {skills.tools.map(skill => (
+                <div key={skill.name} className="skill-card flex items-center justify-between bg-white dark:bg-black/30 px-6 py-4 rounded-2xl hover:bg-amber-50 dark:hover:bg-amber-950/35 border border-zinc-100 dark:border-transparent">
                   <div className="flex items-center gap-4 text-xl">
                     {renderSkillIcon(skill)}
                     <span className="font-medium">{skill.name}</span>

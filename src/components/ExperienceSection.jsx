@@ -18,8 +18,8 @@ const ExperienceSection = () => {
               <Calendar className="text-cyan-700 dark:text-cyan-300" size={28} /> Education
             </h3>
             <div className="space-y-5">
-              {education.map((exp, idx) => (
-                <div key={idx} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-[#080b12]">
+              {education.map(exp => (
+                <div key={exp.title} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-[#080b12]">
                   <div className="md:w-2/5 flex-shrink-0">
                     <div className="flex items-center gap-3 mb-1">
                       <div className="font-medium text-sm tracking-wider text-cyan-700 dark:text-cyan-300">{exp.type.toUpperCase()}</div>
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
                     <div className="text-sm text-slate-400 mb-3 font-medium">{exp.period}</div>
                     <p className="text-slate-600 dark:text-slate-300 text-[15px] mb-6 leading-relaxed">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {exp.highlights.map((h, i) => <div key={i} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
+                      {exp.highlights.map(h => <div key={h} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
                     </div>
                   </div>
                 </div>
@@ -46,8 +46,8 @@ const ExperienceSection = () => {
               <Award className="text-amber-600 dark:text-amber-300" size={28} /> Experience & Certifications
             </h3>
             <div className="space-y-5">
-              {experiences.map((exp, idx) => (
-                <div key={idx} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-[#080b12]">
+              {experiences.map(exp => (
+                <div key={exp.credentialId || exp.title} className="flex flex-col md:flex-row gap-8 md:gap-16 p-9 rounded-3xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-[#080b12]">
                   <div className="md:w-2/5 flex-shrink-0">
                     <div className="flex items-center gap-3 mb-1">
                       <div className="font-medium text-sm tracking-wider text-amber-600 dark:text-amber-300">{exp.type.toUpperCase()}</div>
@@ -60,7 +60,7 @@ const ExperienceSection = () => {
                     <div className="text-sm text-slate-400 mb-3 font-medium">{exp.period}</div>
                     <p className="text-slate-600 dark:text-slate-300 text-[15px] mb-6 leading-relaxed">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {exp.highlights.map((h, i) => <div key={i} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
+                      {exp.highlights.map(h => <div key={h} className="px-5 py-px rounded-full border text-xs text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-700">{h}</div>)}
                     </div>
                   </div>
                 </div>
@@ -75,8 +75,8 @@ const ExperienceSection = () => {
             <div className="text-sm text-cyan-700 dark:text-cyan-300 font-medium">KEY HIGHLIGHTS</div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {achievements.map((ach, idx) => (
-              <div key={idx} className="bg-gradient-to-b from-zinc-900 to-black rounded-3xl p-9 text-center text-white">
+            {achievements.map(ach => (
+              <div key={ach.label} className="bg-gradient-to-b from-zinc-900 to-black rounded-3xl p-9 text-center text-white">
                 <div className="font-mono text-6xl font-bold tracking-tighter text-cyan-300">{ach.number}</div>
                 <div className="text-sm tracking-wider text-white/70 mt-3 font-medium">{ach.label}</div>
               </div>

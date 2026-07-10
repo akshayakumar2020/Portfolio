@@ -13,10 +13,12 @@ const ProjectsSection = ({ handleTilt, resetTilt, openProject }) => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {projects.map((project, index) => (
+        {projects.map(project => (
           <div 
-            key={index}
+            key={project.id}
             className="project-card group tilt-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-xl cursor-pointer"
+            role="button"
+            tabIndex={0}
             onMouseMove={(e) => {
               const card = e.currentTarget;
               handleTilt(e, card);
@@ -26,6 +28,12 @@ const ProjectsSection = ({ handleTilt, resetTilt, openProject }) => {
               resetTilt(card);
             }}
             onClick={() => openProject(project)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProject(project);
+              }
+            }}
           >
             <div className="relative h-56 overflow-hidden">
               <img 
@@ -42,8 +50,8 @@ const ProjectsSection = ({ handleTilt, resetTilt, openProject }) => {
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8">
-                {project.technologies.slice(0, 3).map((tech, i) => (
-                  <span key={i} className="text-xs px-4 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/30 text-cyan-800 dark:text-cyan-200">{tech}</span>
+                {project.technologies.slice(0, 3).map(tech => (
+                  <span key={tech} className="text-xs px-4 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/30 text-cyan-800 dark:text-cyan-200">{tech}</span>
                 ))}
               </div>
 
