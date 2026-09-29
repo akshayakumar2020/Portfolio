@@ -15,7 +15,7 @@ const Hero = ({ scrollToSection }) => {
               Akshaya Kumar
             </h1>
             <div className="text-3xl md:text-4xl font-light tracking-tight text-cyan-700 dark:text-cyan-300">
-              Java Backend Developer
+              Software Developer
             </div>
           </div>
 
