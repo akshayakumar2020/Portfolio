@@ -53,8 +53,8 @@ export const projects = [
       "Integrated React frontend with Spring Boot backend"
     ],
 
-    github: "https://github.com/akshayakumar2020/ParkEase-Smart-Parking-System",
-    live: "https://parkease-demo.netlify.app",
+    github: "https://github.com/akshayakumar2020/ParkEase",
+    live: "https://park-ease1-eight.vercel.app/",
 
     image: "/images/project2.jpg",
     category: "Full Stack"
